@@ -1,1 +1,2 @@
-Flask==2.2.2
+Flask==2.2.3
+fastapi==0.95.1
