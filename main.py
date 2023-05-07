@@ -19,7 +19,6 @@ def preview():
 def svc(value):
     print('value: ', value)
     filtered = df[df['svc_code_ctg'] == value]
-    console.log(df[df['svc_code_ctg'])
 
     if len(filtered) <= 0:
         return 'There is nothing here'
