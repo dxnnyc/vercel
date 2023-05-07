@@ -18,8 +18,8 @@ def preview():
 @app.route('/svc/<value>', methods=["GET"])
 def svc(value):
     print('value: ', value)
+    console.log(value)
     filtered = df[df['svc_code_ctg'] == value]
-    console.log(df[df['svc_code_ctg']])
     if len(filtered) <= 0:
         return 'There is nothing here'
     else:
