@@ -20,7 +20,6 @@ def svc(value):
     print('value: ', value)
     filtered = df[df['svc_code_ctg'] == value]
     console.log(df[df['svc_code_ctg'])
-    console.log(value)
 
     if len(filtered) <= 0:
         return 'There is nothing here'
