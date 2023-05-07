@@ -7,8 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=["GET"])
 def home():
-        #return 'this is a API service for MN Health Services details'
-        return df
+        return 'this is a API service for MN Health Services details'
 
 @app.route('/preview', methods=["GET"])
 def preview():
@@ -19,7 +18,7 @@ def preview():
 @app.route('/svc/<value>', methods=["GET"])
 def svc(value):
     print('value: ', value)
-    filtered = df[df['svc_code_ctg'] == value]
+    filtered = df[df['svc_code_ctg'] == str(value)]
     if len(filtered) <= 0:
         return 'There is nothing here'
     else:
