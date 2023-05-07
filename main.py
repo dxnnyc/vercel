@@ -15,8 +15,8 @@ def preview():
     result = top10rows.to_json(orient="records")
     return result
 
-@app.route('/payer/<value>', methods=["GET"])
-def payer(value):
+@app.route('/svc/<value>', methods=["GET"])
+def svc(value):
     print('value: ', value)
     filtered = df[df['svc_code_ctg'] == value]
     if len(filtered) <= 0:
@@ -24,9 +24,9 @@ def payer(value):
     else:
         return filtered.to_json(orient="records")
 
-@app.route('/payer/<value>/sex/<value2>')
-def payer2(value, value2):
-    filtered = df[df['principal_diagnosis_code'] == value]
+@app.route('/svc/<value>/sex/<value2>')
+def svc2(value, value2):
+    filtered = df[df['svc_code_ctg'] == value]
     filtered2 = filtered[filtered['sex'] == value2]
     if len(filtered2) <= 0:
         return 'There is nothing here'
