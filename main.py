@@ -18,7 +18,7 @@ def preview():
 @app.route('/payer/<value>', methods=["GET"])
 def payer(value):
     print('value: ', value)
-    filtered = df[df['principal_diagnosis_code'] == value]
+    filtered = df[df['svc_code_ctg'] == value]
     if len(filtered) <= 0:
         return 'There is nothing here'
     else:
