@@ -18,6 +18,7 @@ def preview():
 @app.route('/svc/<value>', methods=["GET"])
 def svc(value):
     print('value: ', value)
+    value = int(value)
     filtered = df[df['svc_code_ctg'] == value]
     if len(filtered) <= 0:
         return 'There is nothing here'
@@ -26,6 +27,7 @@ def svc(value):
 
 @app.route('/svc/<value>/sex/<value2>')
 def svc2(value, value2):
+    value = int(value)
     filtered = df[df['svc_code_ctg'] == value]
     filtered2 = filtered[filtered['sex'] == value2]
     if len(filtered2) <= 0:
