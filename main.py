@@ -36,4 +36,4 @@ def svc2(value, value2):
         return filtered2.to_json(orient="records")
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8000, debug=True)
